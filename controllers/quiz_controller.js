@@ -12,3 +12,8 @@ else {
   res.render('quizes/answer', {respuesta: 'incorrecto'});
 }
 };
+// GET /quizes/autores
+exports.author = function(req, res) {
+  res.render('quizes/author', { autor: 'Juanma de Castro'});
+ 
+};
