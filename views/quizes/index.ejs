@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"><title> NewQuiz </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon"/>
+  </head>
+  <body>
+    <h1> NewQuiz: El portal donde podrá crear sus propios acertijos!!! </h1>
+    <br/>
+    <h2> Listado de preguntas:</h2>
+    <br/>
+    <center><table>
+    	<% var i; for (i=0; i < quizes.length; i++) { %>
+    	<tr><td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
+    	<% } %>
+    </table>
+    <br/>
+    	<p>
+        <a href="/quizes/index">Volver</a>
+      </p></center>
+  </body>
+</html>
