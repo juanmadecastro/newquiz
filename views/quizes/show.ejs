@@ -8,7 +8,9 @@
   <body>
     <h1> NewQuiz: preguntas </h1>
     <form method="get" action="/quizes/<%= quiz.id %>/answer">
-    	<br/>
+      <br/>
+      <p>Indice: <%= quiz.indice %></p>
+      <br/>
       <p>Pregunta: <%= quiz.pregunta %></p>
       <br/>      
     	<input type="text" name="respuesta" value="Respuesta"/>
