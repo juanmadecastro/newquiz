@@ -2,18 +2,18 @@
   <center><table>
   <tr>
   <td><label for="preg" class="rem">Pregunta:</label></td>
-  <td><input type="text" id="preg" name="quiz[pregunta]" placeholder="<%= quiz.pregunta %>" value="<%= quiz.pregunta %>"/> </td></tr>
+  <td><input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/> </td></tr>
   <tr>
   <td><label for="resp" class="rem">Respuesta:</label></td>
-  <td><input type="text" id="resp" name="quiz[respuesta]" placeholder="<%= quiz.respuesta %>" value="<%= quiz.respuesta %>"/> </td></tr>
+  <td><input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/> </td></tr>
   <tr>
-  <td><label for="indice" class="rem">Indice:</label></td>
-  <td><input type="text" id="indi" name="quiz[indice]" placeholder="<%= quiz.indice %>" /> </td></tr>
+  <td><label for="indi" class="rem">Indice:</label></td>
+  <td><input type="text" id="indi" name="quiz[indice]" value="<%= quiz.indice %>"/> </td></tr>
   <tr><td colspan="2">Indice debe ser uno de estos valores: Humanidades, Ocio, Ciencia, Tecnología</td></tr>
   <tr>
   <td></td>
   <td><br/>
-  <select name="quiz[indice]" id="indice">
+  <select name="tema" id="tema">
   	<option value="Otro" name="categoria" selected>Otro</option>
   	<option value="Humanidades" name="categoria">Humanidades</option>
   	<option value="Ocio" name="categoria">Ocio</option>

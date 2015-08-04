@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"><title> NewQuiz </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon"/>
+  </head>
+  <body>
+    <h1> NewQuiz: preguntas </h1>
+    <form method="get" action="/quizes/<%= quiz.id %>/answer">
+      <br/>
+      <p>Indice: <%= quiz.indice %></p>
+      <br/>
+      <p>Pregunta: <%= quiz.pregunta %></p>
+      <br/>      
+    	<input type="text" name="respuesta" value="Respuesta"/>
+    	<input type="submit" value="Enviar">
+    </form>
+     <br/>
+      <p>
+        <a href="/quizes/index">Volver</a>
+      </p>
+  </body>
+</html>

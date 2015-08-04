@@ -1,0 +1,7 @@
+    <h1> NewQuiz: añadir pregunta </h1>   
+    	<br/>
+      <form method="post" action="/quizes/create" >
+        <% include _form.ejs %>
+      </form>
+      <br/>
+      <p><a href="/quizes/<%= quiz.id %>">Volver</a></p>    	

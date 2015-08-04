@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>NewQuiz</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-  </head>
-  <body>
-    <h2>Bienvenido a NewQuiz el juego de los acertijos</h2>
-    <form method="get" action="/quizes/answer">
-    	<%= pregunta %></p>
-    	<input type="text" name="respuesta" value="Responda por aqui"/>
-    	<input type="submit" value="Enviar respuesta"> 
-	</form>
-  </body>
-</html>
+<form method="get" action="/quizes/answer">
+  Pregunta: <%= pregunta %></p>
+  <input type="text" name="respuesta" placeholder="Responda por aqui"/>
+  <input type="submit" value="Enviar respuesta"> 
+</form>
+<p><a href="/quizes">Volver</a></p>      

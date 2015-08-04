@@ -21,7 +21,7 @@ exports.inicio = function(req, res){
 
 exports.index = function(req, res){
 	models.Quiz.findAll().then(function(quizes){
-		res.render('quizes/index', {quizes: quizes, errors: []});
+		res.render('quizes/index.ejs', {quizes: quizes, errors: []});
 	}
 	).catch(function(error) {next(error);})
 };
@@ -85,7 +85,7 @@ exports.edit = function(req, res){
 exports.update = function(req, res){
 	req.quiz.pregunta = req.body.quiz.pregunta;
 	req.quiz.respuesta = req.body.quiz.respuesta;
-	req.quiz.indice = req.body.categoria;
+	req.quiz.indice = req.body.quiz.tema;
 	req.quiz.
 	validate()
 	.then(
