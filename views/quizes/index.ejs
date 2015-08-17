@@ -1,5 +1,5 @@
 <form method="get" action="/quizes">
-	<input type="search" name="search" placeholder="Ingrese el texto a buscar"/>
+	<input type="text" name="search" placeholder="Ingrese el texto a buscar"/>
 	<input type="submit" value="Buscar"/>
 </form>
 <% if(quizes.length < 1){ %>
@@ -16,5 +16,5 @@
 <% } %>
 </table>
 <% } %>
-<p>
+<p/>
 <a href="/quizes/new"><button type="button">Crear pregunta</button></a>

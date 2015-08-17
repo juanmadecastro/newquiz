@@ -15,15 +15,22 @@ exports.load = function(req, res, next, quizId){
 
 exports.inicio = function(req, res){
 	models.Quiz.findAll().then(function(quizes){
-		res.render('inicio', { title: 'Hola NewQuiz in the game.', errors: []});
-	})
+		//res.render('/index.ejs', {quizes: quizes, errors: []});
+		res.render('index', { title: 'NewQuiz', errors: [] });
+	}
+	).catch(function(error) {next(error);})
 };
 
 exports.index = function(req, res){
+	if(req.query.search){
+		models.Quiz.findAll({where: ["lower(pregunta) like ?", '%' + req.query.search.replace(" ","%").toLowerCase() + '%'], order: 'pregunta asc'}).then(function(quizes){
+			res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+		});
+	}else{
 	models.Quiz.findAll().then(function(quizes){
-		res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+		res.render('quizes/index.ejs', { quizes: quizes, errors: []});	
+	});	
 	}
-	).catch(function(error) {next(error);})
 };
 
 // GET /quizes/new
