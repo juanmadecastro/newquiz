@@ -1,5 +1,6 @@
   <br/>  
   <center><table>
+  <tr><td>Categoria:</td><td><%= quiz.tema %></td></tr>
   <tr>
   <td><label for="preg" class="rem">Pregunta:</label></td>
   <td><input type="text" id="preg" name="quiz[pregunta]" placeholder="<%= quiz.pregunta %>" value="<%= quiz.pregunta %>"/> </td></tr>
@@ -8,25 +9,21 @@
   <td><input type="text" id="resp" name="quiz[respuesta]" placeholder="<%= quiz.respuesta %>" value="<%= quiz.respuesta %>"/> </td></tr>
   <tr>
   <td><label for="indice" class="rem">Indice:</label></td>
-  <td><input type="text" id="indi" name="quiz[indice]" placeholder="<%= quiz.indice %>" /> </td></tr>
-  <tr><td colspan="2">Indice debe ser uno de estos valores: Humanidades, Ocio, Ciencia, Tecnología</td></tr>
-  <tr>
-  <td></td>
-  <td><br/>
-  <select name="quiz[indice]" id="indice">
-  	<option value="Otro" name="categoria" selected>Otro</option>
-  	<option value="Humanidades" name="categoria">Humanidades</option>
-  	<option value="Ocio" name="categoria">Ocio</option>
-  	<option value="Ciencia" name="categoria">Ciencia</option>
-  	<option value="Tecnologia" name="categoria">Tecnología</option>
-  </select></td>
+  <td>
+    <select name="quiz[tema]" id="indi">
+    <option value="Otro" name="categoria" selected>Otro</option>
+    <option value="Humanidades" name="categoria">Humanidades</option>
+    <option value="Ocio" name="categoria">Ocio</option>
+    <option value="Ciencia" name="categoria">Ciencia</option>
+    <option value="Tecnologia" name="categoria">Tecnología</option>
+  </select></td></td></tr>
   </tr>
   <tr>
   <td></td>
   <td>
-  <a href="/quizes/index"><button type="button">Cancelar</button></a>
+  <a href="/quizes"><button type="button">Cancelar</button></a>
   <input type="submit" value="Salvar"></td></tr>
   <tr>
-  <td></td><td><a href="/quizes/index">Volver</a></td>
+  <td></td><td><a href="/quizes">Volver</a></td>
   </tr>
   </center>

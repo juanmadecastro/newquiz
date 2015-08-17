@@ -55,7 +55,7 @@ exports.author = function(req, res) {
 // GET /quizes/new
 exports.new = function(req, res){
 	var quiz = models.Quiz.build(
-		{ pregunta: "Pregunta", respuesta: "Respuesta", indice: "Indice"});
+		{ pregunta: "Pregunta", respuesta: "Respuesta", tema: "Tema"});
 	res.render('quizes/new', {quiz: quiz, errors: []});
 };
 
@@ -68,7 +68,7 @@ exports.create = function(req, res){
 			if(err){
 				res.render('quizes/new', {quiz: quiz, errors: err.errors});	
 			}else{
-				quiz.save({fields: ["pregunta", "respuesta", "indice"]})
+				quiz.save({fields: ["pregunta", "respuesta", "tema"]})
 				.then(function(){ res.redirect('/quizes')})
 			}
 		}
@@ -85,7 +85,8 @@ exports.edit = function(req, res){
 exports.update = function(req, res){
 	req.quiz.pregunta = req.body.quiz.pregunta;
 	req.quiz.respuesta = req.body.quiz.respuesta;
-	req.quiz.indice = req.body.quiz.tema;
+	req.quiz.tema = req.body.quiz.tema;
+
 	req.quiz.
 	validate()
 	.then(
@@ -94,11 +95,13 @@ exports.update = function(req, res){
 				res.render('quizes/edit',{quiz: req.quiz, errors: err.errors});
 			}else{
 				req.quiz.
-				save( {fields: ["pregunta", "respuesta", "indice"]})
+				save( {fields: ["pregunta", "respuesta", "tema"]})
 				.then( function(){res.redirect('/quizes');});
 			}
 		}
-		);
+		).catch(function(e) {
+    console.log("Project update failed !" + e.message);
+});
 };
 // DELETE /quizes/:id
 exports.destroy = function(req, res){

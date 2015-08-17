@@ -11,9 +11,8 @@ module.exports = function(sequelize, DataTypes)
 		  	type: DataTypes.STRING,
 		  	validate: {notEmpty: {msg: "--> Falta Respuesta"}}
 		 },
-  		  indice: {
+  		  tema: {
 		  	type: DataTypes.STRING,
-		  	//values: ['Humanidades', 'Ocio', 'Ciencia','Tecnologia'], 
 		  	validate: {notEmpty: {msg: "--> Falta Indice"}}
 		 }
 	    }
